@@ -1,0 +1,16 @@
+<form [formGroup]="recoveryForm" (ngSubmit)="onSubmit()" class="modal-dialog modal-dialog-centered">
+  <div class="modal-content p-5">
+    <div class="modal-body custom_body">
+      <p class="h3 text-center pb-4">Укажите email</p>
+      <div class="mb-4">Пожалуйста, укажите email, который вы использовали для входа на сайт</div>
+      <div class="form-group mb-4">
+        <input type="text" class="form-control text-dark" formControlName="field" 
+        placeholder="email@gmail.com"
+        [class.border-danger]="showErrors">
+      </div>
+      <button type="submit" class="btn btn-primary w-100"
+      [disabled]="recoveryForm.controls.field.invalid"
+      >Далее</button>
+    </div>
+  </div>
+</form>
